@@ -1,0 +1,22 @@
+简单的数位组合//特殊的函数使特别大的数可以被读入
+
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int main()
+{ 
+  int sum=0;
+  char number[1000];
+  scanf("%s",&number);
+  int a=0;
+  unsigned long long int numb=strtoull(number,NULL,10);
+  for(;numb>=1;)
+  {
+    a=numb%10;
+    sum+=a;
+    numb/=10;
+  }
+   printf("%d",sum);
+
+  return 0;
+}
