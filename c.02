@@ -1,0 +1,45 @@
+根据输入的年月日及1.1 是星期几来判断该年具体某天是星期几
+  这段代码的核心是要运用
+  int day_of_month[]={0 ,31, x, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+  
+   for (int i=1;i<month;i++)
+   {
+    days+=day_of_month[i];
+   }
+    days+=day;     
+这段代码来计算出天数。
+
+
+
+#include<stdio.h>
+
+int main()
+  {
+   int year,month,day,a;
+   scanf("%d %d %d %d",&year,&month,&day,&a);
+   int days=0;
+   int x;
+   if((year%4==0&&year%100!=0)||year%400==0)
+   x=29;
+   else
+   x=28;
+   int day_of_month[]={0 ,31, x, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+  
+   for (int i=1;i<month;i++)
+   {
+    days+=day_of_month[i];
+   }
+    days+=day;     
+    int c=(days-1);      
+    int d=c%7;
+    if(d+a<7)
+    {
+      printf("%d",a+d);
+    }      
+    else
+    {
+      printf ("%d",a+d-7);
+    }
+    return 0;
+  }
+
